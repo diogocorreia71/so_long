@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:59:39 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/21 15:49:04 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/21 16:09:36 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,14 @@ typedef struct s_game
 int		check_filename(char *str);
 void	create_map(t_game *so_long, char *map_file);
 void	get_rows(t_game *so_long, char *map_file);
+void	launch_game(char *map_file);
+void	read_map(t_game *so_long, int fd);
+int		exit_error(t_game *so_long, char *msg);
+void	check_map(t_game *so_long);
+int		check_paths(t_game *so_long);
+int		check_sprites(t_game *so_long);
+int		check_walls(t_game *so_long);
+int		check_format(t_game *so_long);
+void	clean_exit_test(char **test_map);
 
 #endif
