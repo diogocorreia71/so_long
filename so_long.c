@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:55:58 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/21 15:22:49 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/21 16:19:21 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	launch_game(char *map_file)
 	ft_bzero(&so_long, sizeof(t_game));
 	create_map(&so_long, map_file);
 	check_map(&so_long);
+	launch_mlx(&so_long);
+	load_sprites(&so_long);
 }
 
 int	check_filename(char *str)

@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:59:39 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/21 16:09:36 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/21 16:21:49 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include "lib/libft/libft.h"
 # include "lib/mlx/mlx.h"
+
+# define SIZE		32
+# define SPRITES	5
 
 # define SPACE		'0'
 # define WALL		'1'
@@ -64,5 +67,7 @@ int		check_sprites(t_game *so_long);
 int		check_walls(t_game *so_long);
 int		check_format(t_game *so_long);
 void	clean_exit_test(char **test_map);
+void	launch_mlx(t_game *so_long);
+void	load_sprites(t_game *so_long);
 
 #endif
