@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 11:46:56 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/21 15:01:12 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/22 10:31:10 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # include <stdarg.h>
 # include <stdio.h>
 # include <fcntl.h>
+# include <ctype.h>
+# include <string.h>
+# include <signal.h>
 
 
 typedef struct s_list

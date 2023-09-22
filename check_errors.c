@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:24:01 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/21 15:58:04 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:08:28 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int	check_sprites(t_game *so_long)
 				return (44);
 		}
 	}
+	return (return_msg(so_long));
 }
 
 int	check_paths(t_game *so_long)

@@ -6,11 +6,11 @@
 #    By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 10:21:23 by diodos-s          #+#    #+#              #
-#    Updated: 2023/09/20 10:58:55 by diodos-s         ###   ########.fr        #
+#    Updated: 2023/09/22 11:49:44 by diodos-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = 
+SRC = so_long.c utils.c libx.c create_map.c clean_and_exit.c check_errors.c moves.c
 
 NAME = so_long
 
@@ -47,4 +47,8 @@ fclean: clean
 				${RM} ${NAME}
 
 re: fclean all
+
+.PHONY: all clean fclean re
+
+.SILENT:
 

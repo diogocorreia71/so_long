@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:55:58 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/21 16:19:21 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/22 10:21:34 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ void	launch_game(char *map_file)
 	check_map(&so_long);
 	launch_mlx(&so_long);
 	load_sprites(&so_long);
+	render_map(&so_long);
+	mlx_hook(so_long.win, ON_KEYPRESS, KEYPRESS_MASK, check_key, &so_long);
+	mlx_hook(so_long.win, ON_CLOSE, CLOSE_MASK, quit_game, &so_long);
+	mlx_loop(so_long.mlx);
 }
 
 int	check_filename(char *str)
