@@ -1,7 +1,7 @@
 /* XPM */
 static char * pokeball_xpm[] = {
 "16 16 8 1",
-" 	c None",
+" 	c #70C8A0",
 ".	c #404040",
 "+	c #A80000",
 "@	c #D02828",

@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:59:39 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/22 12:04:34 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:26:23 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "lib/libft/libft.h"
 # include "lib/mlx/mlx.h"
 
-# define SIZE		32
+# define SIZE		16
 # define SPRITES	5
 
 # define FW1		"sprites/wall.xpm"
