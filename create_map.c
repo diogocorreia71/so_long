@@ -6,29 +6,11 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 14:43:32 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/21 15:18:47 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:22:52 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	read_map(t_game *so_long, int fd)
-{
-	int			i;
-	char	*line;
-
-	i = -1;
-	while (++i < so_long->rows)
-	{
-		line = get_next_line(fd);
-		if (!line)
-			exit_error(so_long, "Couldn't read map.");
-		so_long->map[i] = ft_strtrim(line, "\n");
-		if (!so_long->map)
-			exit_error(so_long, "Couldn't read map.");
-		free(line);
-	}
-}
 
 void	get_rows(t_game *so_long, char *map_file)
 {
@@ -49,6 +31,24 @@ void	get_rows(t_game *so_long, char *map_file)
 	}
 }
 
+void	read_map(t_game *so_long, int fd)
+{
+	int			i;
+	char	*line;
+
+	i = -1;
+	while (++i < so_long->rows)
+	{
+		line = get_next_line(fd);
+		if (!line)
+			exit_error(so_long, "Couldn't read map.");
+		so_long->map[i] = ft_strtrim(line, "\n");
+		if (!so_long->map)
+			exit_error(so_long, "Couldn't read map.");
+		free(line);
+	}
+}
+
 void	create_map(t_game *so_long, char *map_file)
 {
 	int	fd;
@@ -56,6 +56,9 @@ void	create_map(t_game *so_long, char *map_file)
 	get_rows(so_long, map_file);
 	so_long->map = ft_calloc(so_long->rows + 1, sizeof(char *));
 	if (!so_long->map)
+		exit_error(so_long, "Couldn't create so_long->map.");
+	fd = open(map_file, O_RDONLY);
+	if (fd < 0)
 		exit_error(so_long, "Couldn't open requested file.");
 	read_map(so_long, fd);
 	close(fd);
