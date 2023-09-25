@@ -6,11 +6,29 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 14:43:32 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/22 12:22:52 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/25 08:55:08 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	read_map(t_game *so_long, int fd)
+{
+	int			i;
+	char	*line;
+
+	i = -1;
+	while (++i < so_long->rows)
+	{
+		line = get_next_line(fd);
+		if (!line)
+			exit_error(so_long, "Couldn't read map.");
+		so_long->map[i] = ft_strtrim(line, "\n");
+		if (!so_long->map)
+			exit_error(so_long, "Couldn't read map.");
+		free(line);
+	}
+}
 
 void	get_rows(t_game *so_long, char *map_file)
 {
@@ -28,24 +46,6 @@ void	get_rows(t_game *so_long, char *map_file)
 			break ;
 		free(line);
 		so_long->rows++;
-	}
-}
-
-void	read_map(t_game *so_long, int fd)
-{
-	int			i;
-	char	*line;
-
-	i = -1;
-	while (++i < so_long->rows)
-	{
-		line = get_next_line(fd);
-		if (!line)
-			exit_error(so_long, "Couldn't read map.");
-		so_long->map[i] = ft_strtrim(line, "\n");
-		if (!so_long->map)
-			exit_error(so_long, "Couldn't read map.");
-		free(line);
 	}
 }
 

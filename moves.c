@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:39:38 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/22 11:02:40 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/25 09:25:39 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	move_player(t_game *so_long)
 	else
 		so_long->map[so_long->prev.y][so_long->prev.x] = SPACE;
 	so_long->map[so_long->curr.y][so_long->curr.x] = PLAYER;
-	render_position(so_long, so_long->prev.y, so_long->prev.x);
-	render_position(so_long, so_long->curr.y, so_long->curr.x);
+	render_position(so_long, so_long->prev.x, so_long->prev.y);
+	render_position(so_long, so_long->curr.x, so_long->curr.y);
 }
 
 void	check_move(t_game *so_long, int key)
