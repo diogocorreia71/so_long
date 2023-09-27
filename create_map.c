@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 14:43:32 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/27 11:42:21 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/27 15:25:00 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	get_rows(t_game *so_long, char *map_file)
 		free(line);
 		so_long->rows++;
 	}
+	if (so_long->rows < 3)
+		exit_error(so_long, "Invalid map size.");
 }
 
 void	create_map(t_game *so_long, char *map_file)

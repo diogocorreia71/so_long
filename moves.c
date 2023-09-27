@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:39:38 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/27 13:06:12 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/27 14:11:49 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,32 +18,32 @@ void	move_player(t_game *so_long)
 
 	if (flag)
 	{
-		so_long->map[so_long->curr.y][so_long->curr.x] = PLAYER;
-		so_long->map[so_long->prev.y][so_long->prev.x] = EXIT;
+		so_long->map[so_long->curr.y][so_long->curr.x] = 'P';
+		so_long->map[so_long->prev.y][so_long->prev.x] = 'E';
 		flag = 0;
 	}
-	else if (so_long->map[so_long->curr.y][so_long->curr.x] == EXIT)
+	else if (so_long->map[so_long->curr.y][so_long->curr.x] == 'E')
 	{
-		so_long->map[so_long->prev.y][so_long->prev.x] = SPACE;
+		so_long->map[so_long->prev.y][so_long->prev.x] = '0';
 		flag = 1;
 	}
 	else
-		so_long->map[so_long->prev.y][so_long->prev.x] = SPACE;
-	so_long->map[so_long->curr.y][so_long->curr.x] = PLAYER;
+		so_long->map[so_long->prev.y][so_long->prev.x] = '0';
+	so_long->map[so_long->curr.y][so_long->curr.x] = 'P';
 	render_position(so_long, so_long->prev.x, so_long->prev.y);
 	render_position(so_long, so_long->curr.x, so_long->curr.y);
 }
 
 void	check_move(t_game *so_long, int key)
 {
-	if (so_long->map[so_long->curr.y][so_long->curr.x] != WALL)
+	if (so_long->map[so_long->curr.y][so_long->curr.x] != '1')
 	{
 		if (key == W || key == A || key == S || key == D || key == UP
 			|| key == LEFT || key == DOWN || key == RIGHT)
 			ft_printf("Moves: %i\n", ++so_long->moves);
-		if (so_long->map[so_long->curr.y][so_long->curr.x] == COIN)
+		if (so_long->map[so_long->curr.y][so_long->curr.x] == 'C')
 			so_long->coins++;
-		else if (so_long->map[so_long->curr.y][so_long->curr.x] == EXIT
+		else if (so_long->map[so_long->curr.y][so_long->curr.x] == 'E'
 			&& so_long->coins == so_long->total_coins)
 		{
 			ft_printf("You won!\n");

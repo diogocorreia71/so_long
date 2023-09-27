@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:59:39 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/27 13:05:25 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/27 14:15:14 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,6 @@
 # define FC1		"sprites/pokeball.xpm"
 # define FE1		"sprites/exit.xpm"
 # define FP1		"sprites/player.xpm"
-
-# define SPACE		'0'
-# define WALL		'1'
-# define COIN		'C'
-# define EXIT		'E'
-# define PLAYER		'P'
 
 # define ON_KEYPRESS 2
 # define ON_CLOSE 17

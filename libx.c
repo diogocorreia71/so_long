@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 16:12:42 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/27 13:07:04 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/27 14:12:31 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,23 +56,23 @@ void	render_map(t_game *so_long)
 
 void	render_position(t_game *so_long, int x, int y)
 {
-	if (so_long->map[y][x] == WALL)
+	if (so_long->map[y][x] == '1')
 		mlx_put_image_to_window(so_long->mlx, so_long->win,
 			so_long->sprites[W1].img, so_long->sprites[W1].width * x,
 			so_long->sprites[W1].height * y);
-	else if (so_long->map[y][x] == COIN)
+	else if (so_long->map[y][x] == 'C')
 		mlx_put_image_to_window(so_long->mlx, so_long->win,
 			so_long->sprites[C1].img, so_long->sprites[C1].width * x,
 			so_long->sprites[C1].height * y);
-	else if (so_long->map[y][x] == EXIT)
+	else if (so_long->map[y][x] == 'E')
 		mlx_put_image_to_window(so_long->mlx, so_long->win,
 			so_long->sprites[E1].img, so_long->sprites[E1].width * x,
 			so_long->sprites[E1].height * y);
-	else if (so_long->map[y][x] == SPACE)
+	else if (so_long->map[y][x] == '0')
 		mlx_put_image_to_window(so_long->mlx, so_long->win,
 			so_long->sprites[S1].img, so_long->sprites[S1].width * x,
 			so_long->sprites[S1].height * y);
-	else if (so_long->map [y][x] == PLAYER)
+	else if (so_long->map [y][x] == 'P')
 		mlx_put_image_to_window(so_long->mlx, so_long->win,
 			so_long->sprites[P1].img, so_long->sprites[P1].width * x,
 			so_long->sprites[P1].height * y);
