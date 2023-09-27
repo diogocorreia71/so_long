@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:24:01 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/25 09:05:41 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/27 09:44:19 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,8 @@ void	check_map(t_game *so_long)
 
 	if (!so_long->rows)
 		exit_error(so_long, "Map is empty.");
+	if (so_long->rows < 3 || so_long->cols < 3)
+		exit_error(so_long, "Map needs to have at least 3 rows or 3 columns.");
 	if (check_format(so_long))
 		exit_error(so_long, "Map is not a rectangle.");
 	if (check_walls(so_long))
