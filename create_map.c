@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 14:43:32 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/25 08:55:08 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/27 11:42:21 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	read_map(t_game *so_long, int fd)
 {
 	int			i;
-	char	*line;
+	char		*line;
 
 	i = -1;
 	while (++i < so_long->rows)
@@ -33,7 +33,7 @@ void	read_map(t_game *so_long, int fd)
 void	get_rows(t_game *so_long, char *map_file)
 {
 	int			fd;
-	char	*line;
+	char		*line;
 
 	so_long->rows = 0;
 	fd = open(map_file, O_RDONLY);

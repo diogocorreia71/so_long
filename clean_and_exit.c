@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:58:24 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/22 11:46:13 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/27 11:53:53 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	clean_test_map(char **test_map)
 {
 	size_t	i;
-	
+
 	i = 0;
 	if (!test_map)
 		return ;
@@ -36,8 +36,8 @@ void	clean_sprites(t_game *so_long)
 
 void	clean_map(t_game *so_long)
 {
-	size_t i;
-	
+	size_t	i;
+
 	i = 0;
 	if (!so_long->map)
 		return ;

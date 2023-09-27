@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:39:38 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/25 09:25:39 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/27 13:06:12 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,13 @@ void	check_move(t_game *so_long, int key)
 {
 	if (so_long->map[so_long->curr.y][so_long->curr.x] != WALL)
 	{
-		if (key == W || key == A || key == S || key == D || key == UP || key == LEFT || key == DOWN || key == RIGHT)
+		if (key == W || key == A || key == S || key == D || key == UP
+			|| key == LEFT || key == DOWN || key == RIGHT)
 			ft_printf("Moves: %i\n", ++so_long->moves);
 		if (so_long->map[so_long->curr.y][so_long->curr.x] == COIN)
 			so_long->coins++;
-		else if (so_long->map[so_long->curr.y][so_long->curr.x] == EXIT && so_long->coins == so_long->total_coins)
+		else if (so_long->map[so_long->curr.y][so_long->curr.x] == EXIT
+			&& so_long->coins == so_long->total_coins)
 		{
 			ft_printf("You won!\n");
 			quit_game(so_long);

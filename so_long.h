@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:59:39 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/25 10:03:56 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/27 13:05:25 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,10 @@ void	load_sprites(t_game *so_long);
 void	render_map(t_game *so_long);
 void	render_position(t_game *so_long, int x, int y);
 int		return_msg(t_game *so_long);
-int		flood_fill(int total_coins, int y, int x, char **map_test);
+int		flood_fill(int total_coins, int y, int x, char **test_map);
 int		quit_game(t_game *so_long);
 int		exit_error(t_game *so_long, char *msg);
 void	check_map(t_game *so_long);
 void	clean_test_map(char **test_map);
 void	clean_game(t_game *so_long);
-
 #endif

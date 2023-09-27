@@ -6,7 +6,7 @@
 /*   By: diodos-s <diodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:24:01 by diodos-s          #+#    #+#             */
-/*   Updated: 2023/09/27 09:44:19 by diodos-s         ###   ########.fr       */
+/*   Updated: 2023/09/27 13:10:22 by diodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	check_paths(t_game *so_long)
 {
-	int	i;
-	int	reach_exit;
-	char **test_map;
+	int		i;
+	int		reach_exit;
+	char	**test_map;
 
 	i = -1;
 	reach_exit = 0;
@@ -31,7 +31,8 @@ int	check_paths(t_game *so_long)
 				exit_error(so_long, "Memory allocaction failed.");
 		}
 	}
-	reach_exit = flood_fill(so_long->total_coins, so_long->curr.y, so_long->curr.x, test_map);
+	reach_exit = flood_fill(so_long->total_coins, so_long->curr.y,
+			so_long->curr.x, test_map);
 	clean_test_map(test_map);
 	return (reach_exit);
 }
@@ -70,19 +71,21 @@ int	check_walls(t_game *so_long)
 
 	i = -1;
 	while (++i < so_long->rows)
-		if (so_long->map[i][0] != WALL || so_long->map[i][so_long->cols - 1] != WALL)
+		if (so_long->map[i][0] != WALL
+			|| so_long->map[i][so_long->cols - 1] != WALL)
 			return (EXIT_FAILURE);
 	i = -1;
 	while (++i < so_long->cols)
-		if (so_long->map[0][i] != WALL || so_long->map[so_long->rows - 1][i] != WALL)
+		if (so_long->map[0][i] != WALL
+			|| so_long->map[so_long->rows - 1][i] != WALL)
 			return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 }
 
 int	check_format(t_game *so_long)
 {
-	int 	i;
-	int 	row_len;
+	int	i;
+	int	row_len;
 
 	i = 0;
 	row_len = ft_strlen(so_long->map[0]);
@@ -102,8 +105,8 @@ void	check_map(t_game *so_long)
 
 	if (!so_long->rows)
 		exit_error(so_long, "Map is empty.");
-	if (so_long->rows < 3 || so_long->cols < 3)
-		exit_error(so_long, "Map needs to have at least 3 rows or 3 columns.");
+	// if (so_long->rows < 3 || so_long->cols < 3)
+	// 	exit_error(so_long, "Map needs to have at least 3 rows or 3 columns.");
 	if (check_format(so_long))
 		exit_error(so_long, "Map is not a rectangle.");
 	if (check_walls(so_long))
