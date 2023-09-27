@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 	else
 	{
 		ft_printf("Error!\nInvalid number of arguments. ");
-		ft_printf("Try <./so_long> <maps/map_name.ber>");
+		ft_printf("Try <./so_long> <maps/valid/map_name.ber>");
 		return (EXIT_FAILURE);
 	}
 }
