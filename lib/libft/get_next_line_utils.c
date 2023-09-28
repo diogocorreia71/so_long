@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+char	*new_stash_aux(char *new_stash)
+{
+	if (new_stash[0] == '\0')
+	{
+		free (new_stash);
+		new_stash = 0;
+	}
+	return (new_stash);
+}
+
 char	*new_stash(char *stash)
 {
 	int		i;
@@ -35,6 +45,7 @@ char	*new_stash(char *stash)
 		str[j++] = stash[i++];
 	str[j] = '\0';
 	free(stash);
+	str = new_stash_aux(str);
 	return (str);
 }
 
